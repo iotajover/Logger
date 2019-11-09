@@ -81,7 +81,13 @@ public class SignupActivity extends AppCompatActivity {
                 String errorCompleteInformation = user.validateCompleteInformation();
                 if(errorCompleteInformation.isEmpty()) {
                     if(user.validatePassword()) {
-                        validateUserCreated(properties.getProperty("validateUserCreatedURL"));
+                        util u = new util();
+                        if(u.verificarConexionInternet()){
+                            validateUserCreated(properties.getProperty("validateUserCreatedURL"));
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Para registrarse debe poseer conexión a internet", Toast.LENGTH_LONG).show();
+                        }
+
                     } else {
                         Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden.", Toast.LENGTH_LONG).show();
                     }

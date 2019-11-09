@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.logger.customfonts.manejoSQLiteHelper;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
@@ -71,24 +72,38 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!email.getText().toString().isEmpty()) {
-                    if(!password.getText().toString().isEmpty()) {
-                        validateUser(properties.getProperty("validateUserURL"));
+                util u = new util();
+                manejoSQLiteHelper manejoSQLiteHelper = new manejoSQLiteHelper();
+                manejoSQLiteHelper.consultarFromularios(LoginActivity.this);
+                if(u.verificarConexionInternet()) {
+                    if (!email.getText().toString().isEmpty()) {
+                        if (!password.getText().toString().isEmpty()) {
+                            validateUser(properties.getProperty("validateUserURL"));
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Por favor ingrese la contraseña.", Toast.LENGTH_LONG).show();
+                        }
                     } else {
-                        Toast.makeText(getApplicationContext(), "Por favor ingrese la contraseña.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Por favor ingrese el correo.", Toast.LENGTH_LONG).show();
                     }
-                } else {
-                    Toast.makeText(getApplicationContext(), "Por favor ingrese el correo.", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "No posee conexion a internet", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
     }
 
     private void registerUser() {
-        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-        intent.putExtra("email", email.getText().toString());
-        password.setText("");
-        startActivity(intent);
+        util u = new util();
+        if(u.verificarConexionInternet()){
+            Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+            intent.putExtra("email", email.getText().toString());
+            password.setText("");
+            startActivity(intent);
+        }else{
+            Toast.makeText(getApplicationContext(), "Para registrarse debe poseer conexion a internet", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     private void validateUser(String URL) {
