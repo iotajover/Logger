@@ -24,7 +24,7 @@ public class manejoSQLiteHelper {
         ContentValues values = new ContentValues();
         values.put("correo", usuario.getEmail());
         values.put("nombre", usuario.getName());
-        values.put("usuario", usuario.getUsername());
+        values.put("usuario", usuario.getDocument());
         values.put("contrasena", usuario.getPassword());
         values.put("genero", usuario.getGender());
 

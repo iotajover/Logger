@@ -10,10 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dashboardActivity"></activity>
-        <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".FormCanActivity"></activity>
+        <activity android:name=".dashboardActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,15 +23,15 @@
         </activity>
     </application>
 
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="18"></uses-sdk>
-
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--<uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />-->
 
 </manifest>

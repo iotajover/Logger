@@ -2,17 +2,19 @@ package com.example.logger;
 
 public class User {
     private String name;
-    private String username;
+    private String document;
     private String email;
     private String gender;
+    private String profile;
     private String password;
     private String passwordConfirmation;
 
-    public User(String name, String username, String email, String gender, String password, String passwordConfirmation) {
+    public User(String name, String document, String email, String gender, String profile, String password, String passwordConfirmation) {
         this.name = name;
-        this.username = username;
+        this.document = document;
         this.email = email;
         this.gender = gender;
+        this.profile = profile;
         this.password = password;
         this.passwordConfirmation = passwordConfirmation;
     }
@@ -21,8 +23,8 @@ public class User {
         String error;
         if(this.name.isEmpty()) {
             error = "Por favor ingrese su nombre completo.";
-        } else if(this.username.isEmpty()) {
-            error = "Por favor ingrese un nombre de usuario.";
+        } else if(this.document.isEmpty()) {
+            error = "Por favor ingrese su número de identificación.";
         } else if(this.email.isEmpty()) {
             error = "Por favor ingrese su dirección de correo.";
         } else if(this.password.isEmpty()) {
@@ -51,10 +53,6 @@ public class User {
         return name;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -67,7 +65,7 @@ public class User {
         return password;
     }
 
-    public String getPasswordConfirmation() {
-        return passwordConfirmation;
-    }
+    public String getDocument() { return document; }
+
+    public String getProfile() { return profile; }
 }

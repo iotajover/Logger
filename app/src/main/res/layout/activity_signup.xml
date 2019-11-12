@@ -98,11 +98,11 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Usuario"
+                        android:hint="Documento de identidad"
                         android:ems="10"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:textSize="20sp"
-                        android:id="@+id/register_username"/>
+                        android:id="@+id/register_document"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

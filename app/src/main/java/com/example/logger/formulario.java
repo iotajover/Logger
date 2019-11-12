@@ -1,5 +1,4 @@
 package com.example.logger;
-
 import java.util.ArrayList;
 import java.util.List;
 

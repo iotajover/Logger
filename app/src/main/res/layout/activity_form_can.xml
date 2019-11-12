@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormCanActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <com.example.logger.customfonts.TextView_break_bold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Insertar nuevo formulario canino"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Correo electronico">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/caninos_email"
+                    android:editable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Nombre del supervisor"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Seleccione la ruta"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Seleccione la institucion educativa:" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Seleccione la sede:" />
+
+                <Spinner
+                    android:id="@+id/spinner4.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Seleccione el orden:" />
+
+            <Spinner
+                android:id="@+id/spinner5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Grupo:" />
+
+                <Spinner
+                    android:id="@+id/spinnerSede"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:hint="Soporte Fotografico::" />
+
+
+
+                <Button
+                    android:id="@+id/Foto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button_rounded"
+                    android:text="Elegir archivos"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </RadioGroup>
+
+            <com.example.logger.customfonts.TextView_break_bold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Presentacion Personal"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/uniforme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Porta adecuadamente el uniforme?" />
+
+                <Spinner
+                    android:id="@+id/spinner6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/editText2"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+
+            <com.example.logger.customfonts.TextView_break_bold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Dotacion"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/juguete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Porta juguete o motivador del canino?" />
+
+                <Spinner
+                    android:id="@+id/spinner8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/comentariojuguete"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/chaleco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="El canino tiene chaleco identificador?" />
+
+                <Spinner
+                    android:id="@+id/spinner9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/comentariochaleco"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bozal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="El canino porta bozal?" />
+
+                <Spinner
+                    android:id="@+id/spinner10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/comentariobozal"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cuello"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="El canino porta cuero en cuello?" />
+
+                <Spinner
+                    android:id="@+id/spinner11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/comentaricuello"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/collar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Porta colla fijo?" />
+
+                <Spinner
+                    android:id="@+id/spinner12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/comentarioCollar"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rasqueta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Porta rasqueta?" />
+
+                <Spinner
+                    android:id="@+id/spinner13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/comentariorasqueta"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dotacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tiene dotacion de invierno?" />
+
+                <Spinner
+                    android:id="@+id/spinner7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="clipBounds"
+                    android:layout_weight="4" />
+
+                <EditText
+                    android:id="@+id/comentariodotacion"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="opcional"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4" />
+            </RadioGroup>
+
+            <com.example.logger.customfonts.TextView_break_bold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Documentacion"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

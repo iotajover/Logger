@@ -70,6 +70,17 @@
                             android:textSize="18sp"
                             android:layout_marginTop="10dp"/>
 
+                        <TextView
+                            android:id="@+id/dashboard_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="invisible"/>
+
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -118,7 +129,8 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@android:color/transparent"
+                                    android:id="@+id/buttonPerfil"/>
 
                             </RelativeLayout>
 
@@ -139,13 +151,13 @@
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/education"
+                                    android:src="@drawable/caninos"
                                     android:layout_centerInParent="true"
                                     android:id="@+id/dashboard_img2"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Educación"
+                                    android:text="Formulario Caninos"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/dashboard_img2"
                                     android:layout_centerHorizontal="true"
@@ -154,7 +166,8 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@android:color/transparent"
+                                    android:id="@+id/buttonFormulario"/>
 
                             </RelativeLayout>
 
@@ -183,13 +196,13 @@
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/health"
+                                    android:src="@drawable/sincronizacion"
                                     android:layout_centerInParent="true"
                                     android:id="@+id/dashboard_img3"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Salud"
+                                    android:text="Sincronización\nFormularios"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/dashboard_img3"
                                     android:layout_centerHorizontal="true"
@@ -219,13 +232,13 @@
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/goal"
+                                    android:src="@drawable/salida_segura"
                                     android:layout_centerInParent="true"
                                     android:id="@+id/dashboard_img4"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Logros"
+                                    android:text="Salida Segura"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/dashboard_img4"
                                     android:layout_centerHorizontal="true"
@@ -234,7 +247,8 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@android:color/transparent"
+                                    android:id="@+id/buttonLogout"/>
 
                             </RelativeLayout>
 
@@ -242,7 +256,7 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
                         android:orientation="horizontal"
@@ -320,7 +334,7 @@
 
                         </androidx.cardview.widget.CardView>
 
-                    </LinearLayout>
+                    </LinearLayout>-->
 
                 </LinearLayout>
 

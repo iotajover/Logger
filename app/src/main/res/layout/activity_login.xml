@@ -91,11 +91,11 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Correo electrónico"
+                        android:hint="Documento de identidad"
                         android:ems="10"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:textSize="20sp"
-                        android:id="@+id/login_email"/>
+                        android:id="@+id/login_document"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

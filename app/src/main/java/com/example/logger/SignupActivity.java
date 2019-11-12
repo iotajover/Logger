@@ -19,16 +19,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
 public class SignupActivity extends AppCompatActivity {
     private TextInputEditText name;
-    private TextInputEditText username;
+    private TextInputEditText document;
     private TextInputEditText email;
     private TextInputEditText password;
     private TextInputEditText confirmPassword;
@@ -44,7 +41,7 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         name = (TextInputEditText)findViewById(R.id.register_name);
-        username = (TextInputEditText)findViewById(R.id.register_username);
+        document = (TextInputEditText)findViewById(R.id.register_document);
         email = (TextInputEditText)findViewById(R.id.register_email);
         password = (TextInputEditText)findViewById(R.id.register_password);
         confirmPassword = (TextInputEditText)findViewById(R.id.register_confirm_password);
@@ -57,9 +54,9 @@ public class SignupActivity extends AppCompatActivity {
 
         try {
             Intent intent = getIntent();
-            String login_email = intent.getExtras().getString("email");
-            if (!login_email.isEmpty()) {
-                email.setText(login_email);
+            String login_document = intent.getExtras().getString("document");
+            if (!login_document.isEmpty()) {
+                document.setText(login_document);
             }
         } catch (NullPointerException e) {
             Log.e("ERROR", e.toString());
@@ -76,18 +73,17 @@ public class SignupActivity extends AppCompatActivity {
                 } else {
                     gender = "";
                 }
-                user = new User(name.getText().toString(), username.getText().toString(), email.getText().toString(), gender, password.getText().toString(), confirmPassword.getText().toString());
+                user = new User(name.getText().toString(), document.getText().toString(), email.getText().toString(), gender, "Técnica", password.getText().toString(), confirmPassword.getText().toString());
 
                 String errorCompleteInformation = user.validateCompleteInformation();
                 if(errorCompleteInformation.isEmpty()) {
                     if(user.validatePassword()) {
-                        util u = new util();
-                        if(u.verificarConexionInternet()){
+                        util u = new util(getApplicationContext());
+                        if(u.verificarConexionInternet()) {
                             validateUserCreated(properties.getProperty("validateUserCreatedURL"));
-                        }else{
-                            Toast.makeText(getApplicationContext(), "Para registrarse debe poseer conexión a internet", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Para registrarse debe tener conexion a internet.", Toast.LENGTH_LONG).show();
                         }
-
                     } else {
                         Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden.", Toast.LENGTH_LONG).show();
                     }
@@ -105,7 +101,7 @@ public class SignupActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Usuario registrado exitosamente.", Toast.LENGTH_LONG).show();
                 LoginActivity.loginActivityInstance.finish();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                intent.putExtra("email", user.getEmail());
+                intent.putExtra("document", user.getDocument());
                 startActivity(intent);
                 finish();
             }
@@ -120,10 +116,11 @@ public class SignupActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
                 params.put("nombre", user.getName());
-                params.put("usuario", user.getUsername());
+                params.put("usuario", user.getDocument());
                 params.put("correo", user.getEmail());
                 params.put("genero", user.getGender());
                 params.put("contrasena", user.getPassword());
+                params.put("perfil", user.getProfile());
 
                 return params;
             }
@@ -137,10 +134,10 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(!response.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Existe un usuario creado con esta dirección de correo.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Ya existe un usuario creado con ese número de documento de identidad.", Toast.LENGTH_LONG).show();
                     LoginActivity.loginActivityInstance.finish();
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                    intent.putExtra("email", user.getEmail());
+                    intent.putExtra("document", user.getDocument());
                     startActivity(intent);
                     finish();
                 } else {
@@ -156,7 +153,7 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("usuario", email.getText().toString());
+                params.put("usuario", document.getText().toString());
                 return params;
             }
         };
