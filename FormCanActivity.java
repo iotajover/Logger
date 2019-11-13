@@ -6,15 +6,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Properties;
+
 public class FormCanActivity extends AppCompatActivity {
 
     private TextView email;
-
+    private TextInputEditText name;
+    private TextInputEditText document;
+    private TextInputEditText password;
+    private TextInputEditText confirmPassword;
+    private RadioButton genderMale;
+    private RadioButton genderFemale;
+    private Button register;
+    private User user;
+    private Properties properties;
 
 
     @Override
@@ -32,65 +45,19 @@ public class FormCanActivity extends AppCompatActivity {
             Log.e("ERROR", e.toString());
         }
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        String[] ruta = {"RUTA1","RUTA2","RUTA3","RUTA4","RUTA5"};
-        spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ruta));
-        if (spinner.getSelectedItem()!=""){
-            Toast.makeText(getApplicationContext(), "RUTA1", Toast.LENGTH_LONG).show();
-
-//Si el spinner no tiene nada seleccionado
-        }else{
-            Toast.makeText(getApplicationContext(), "Seleccione", Toast.LENGTH_LONG).show();
-        }
 
 
-        /*spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id)
-            {
-                Toast.makeText(adapterView.getContext(),
-                        (String) adapterView.getItemAtPosition(pos), Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {    }
-        });
-*/
-        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-        String[] institucion = {"COLEGIO AMERICANO","COSTA RICA","GIMNASIO MODERNO","REFUS","SAN BARTOLOME"};
-        spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, institucion));
-        if (spinner.getSelectedItem()!=""){
-            Toast.makeText(getApplicationContext(), "COLEGIO AMERICANO", Toast.LENGTH_LONG).show();
-
-//Si el spinner no tiene nada seleccionado
-        }else{
-            Toast.makeText(getApplicationContext(), "Seleccione", Toast.LENGTH_LONG).show();
-        }
-
-
-
-        Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
-        String[] sede = {"a","b"};
-        spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, sede));
-        if (spinner.getSelectedItem()!=""){
-            Toast.makeText(getApplicationContext(), "A", Toast.LENGTH_LONG).show();
-
-//Si el spinner no tiene nada seleccionado
-        }else{
-            Toast.makeText(getApplicationContext(), "Seleccione", Toast.LENGTH_LONG).show();
-        }
-
-
-        Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
-        String[] orden = {"a","b"};
-        spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, orden));
-
-        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
-        String[] Grupo = {"1","2","3","4","5"};
-        spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Grupo));
-
-        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
+        Spinner spinner6 = (Spinner) findViewById(R.id.spGrupo);
         String[] Uniforme = {"si","no", "otro"};
-        spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Uniforme));
+        spinner6.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Uniforme));
+        if (spinner6.getSelectedItem()!=""){
+            Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_LONG).show();
+
+//Si el spinner no tiene nada seleccionado
+        }else{
+            Toast.makeText(getApplicationContext(), "Seleccione", Toast.LENGTH_LONG).show();
+        }
+
+
     }
 }
