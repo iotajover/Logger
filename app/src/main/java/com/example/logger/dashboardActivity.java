@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.logger.customfonts.manejoArchivos;
 
+import java.util.List;
+
 public class dashboardActivity extends AppCompatActivity {
     private TextView username;
     private TextView name;
@@ -78,7 +80,11 @@ public class dashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 manejoArchivos archivos = new manejoArchivos();
                 archivos.saveToFile("Hola");
-                archivos.ReadFile(v.getContext());
+                List<String >archivosS = archivos.leerRutasArchivos();
+                for(String ruta:archivosS){
+                    archivos.eliminarArchivo(ruta);
+                }
+                //archivos.ReadFile(v.getContext());
             }
         });
     }

@@ -17,6 +17,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class manejoArchivos extends AppCompatActivity {
 
@@ -53,8 +59,9 @@ public class manejoArchivos extends AppCompatActivity {
 
     public static boolean saveToFile( String data){
         try {
+            Gson
             new File(path  ).mkdir();
-            File file = new File(path+ fileName);
+            File file = new File(path+ System.currentTimeMillis()+".txt");
             if (!file.getParentFile().exists()) {
                 file.getParentFile().mkdirs();
             }
@@ -71,8 +78,32 @@ public class manejoArchivos extends AppCompatActivity {
             System.out.println(TAG+ ex.getMessage());
         }
         return  false;
+    }
 
+    public List<String> leerRutasArchivos(){
+        new File(path  ).mkdir();
+        List <String> listarFicherosPorCarpeta = new ArrayList<>();
+        File file = new File(path);
+        for (final File ficheroEntrada : file.listFiles()) {
+            if (ficheroEntrada.isDirectory()) {
+                listarFicherosPorCarpeta.add(ficheroEntrada.getName());
+            } else {
+                listarFicherosPorCarpeta.add(ficheroEntrada.getName());
+            }
+        }
+        return listarFicherosPorCarpeta;
+    }
 
+    public boolean eliminarArchivo(String ruta){
+        try{
+            String fileName = path +ruta;
+            File myFile = new File(fileName);
+            if(myFile.exists())
+                myFile.delete();
+            return true;
+        }catch(Exception ex){
+            return false;
+        }
     }
 
 }
