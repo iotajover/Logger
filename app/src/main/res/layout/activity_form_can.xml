@@ -49,6 +49,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nombreSupervisor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -61,6 +62,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ruta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -84,6 +86,7 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/institucionEducativa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Seleccione la institucion educativa:" />
@@ -95,6 +98,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sede"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Seleccione la sede:" />
@@ -108,8 +112,9 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText"
+                android:id="@+id/orden"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Seleccione el orden:" />
@@ -126,6 +131,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/grupo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Grupo:" />

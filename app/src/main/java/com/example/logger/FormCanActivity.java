@@ -9,6 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.logger.customfonts.manejoArchivos;
+import com.google.android.material.textfield.TextInputEditText;
+
 public class FormCanActivity extends AppCompatActivity {
 
     private TextView email;
@@ -51,5 +54,29 @@ public class FormCanActivity extends AppCompatActivity {
         Spinner spinner3 = (Spinner) findViewById(R.id.spinnerSede);
         String[] sede = {"a","b"};
         spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, sede));
+    }
+
+    public void cargarFormulario(){
+        formulario formulario = new formulario();
+        TextInputEditText emial = (TextInputEditText)findViewById(R.id.caninos_email);
+        formulario.setCorreo(email.getText().toString());
+
+        TextInputEditText nombreSupervisor = (TextInputEditText)findViewById(R.id.nombreSupervisor);
+        formulario.setNombreSupervisor(nombreSupervisor.getText().toString());
+
+        TextInputEditText ruta = (TextInputEditText)findViewById(R.id.ruta);
+        formulario.setRuta(ruta.getText().toString());
+
+        TextInputEditText institucionEducativa = (TextInputEditText)findViewById(R.id.institucionEducativa);
+        formulario.setInstitucionEducativa(institucionEducativa.getText().toString());
+
+        TextInputEditText sede = (TextInputEditText)findViewById(R.id.sede);
+        formulario.setSede(sede.getText().toString());
+
+        TextInputEditText grupo = (TextInputEditText)findViewById(R.id.grupo);
+        formulario.setGrupo(grupo.getText().toString());
+
+        manejoArchivos manejoArchivos= new manejoArchivos();
+        manejoArchivos.saveToFile(formulario);
     }
 }
