@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Ceinte</string>
+
+
+
+        <string-array name="Institucion">
+            <item>Colegio Cristobal Colon</item>
+            <item>Nuevo Horizonte</item>
+            <item>Americano</item>
+            <item>Monserrat</item>
+            <item>San Nicolas</item>
+            <item>San Bartolome</item>
+        </string-array>
+
+    <string-array name="Ruta">
+        <item>Ruta0</item>
+        <item>Ruta1</item>
+        <item>Ruta2</item>
+        <item>Ruta3</item>
+        <item>Ruta4</item>
+        <item>Ruta5</item>
+    </string-array>
+    <string-array name="Sede">
+        <item>TOBERIN</item>
+        <item>NORTE</item>
+        <item>SUR</item>
+        <item>Occidente</item>
+
+    </string-array>
+    <string-array name="Orden">
+        <item>A</item>
+        <item>B</item>
+
+    </string-array>
+
+<string-array name="Grupo">
+<item>1</item>
+<item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+
+</string-array>
+    <string-array name="Supervisor">
+        <item>NATALIA DIAZ</item>
+        <item>FERNANDO CHITIVA</item>
+        <item>JOSE MIGUEL</item>
+
+    </string-array>
+
+    <string-array name="SiNo">
+        <item>Si</item>
+        <item>No</item>
+        <item>Otro</item>
+
+    </string-array>
+
+</resources>
