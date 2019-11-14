@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 public class FormCanActivity extends AppCompatActivity {
 
     private TextView email;
+    private Button guardar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,7 @@ public class FormCanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_form_can);
 
         email = (TextView)findViewById(R.id.caninos_email);
-
+        guardar = (Button)findViewById(R.id.btnGuardarArchivo);
         try {
             Intent intent = getIntent();
             String login_email = intent.getExtras().getString("email");
@@ -54,7 +57,16 @@ public class FormCanActivity extends AppCompatActivity {
         Spinner spinner3 = (Spinner) findViewById(R.id.spinnerSede);
         String[] sede = {"a","b"};
         spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, sede));
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cargarFormulario();
+            }
+        });
     }
+
+
 
     public void cargarFormulario(){
         formulario formulario = new formulario();

@@ -83,16 +83,22 @@ public class dashboardActivity extends AppCompatActivity {
         buttonSincronizacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                manejoArchivos archivos = new manejoArchivos();
-                List<String >archivosS = archivos.leerRutasArchivos();
-                int numero = 1;
-                for(String ruta:archivosS){
-                formulario obj =archivos.ReadFile(v.getContext(),ruta);
-                //chiti ACA COLOCA EL CODIGO QUE ACTUALIZA EN MYSQL
-                archivos.eliminarArchivo(ruta);
-                numero++;
-                Toast.makeText(getApplicationContext(), "Sincronizando "+numero+" de "+archivosS.size(), Toast.LENGTH_LONG).show();
-                textSincronizacion.setText("Sincronización ("+numero+") pendientes");
+                util u = new util(getApplicationContext());
+                if(u.verificarConexionInternet()) {
+
+                    manejoArchivos archivos = new manejoArchivos();
+                    List<String >archivosS = archivos.leerRutasArchivos();
+                    int numero = 1;
+                    for(String ruta:archivosS){
+                        formulario obj =archivos.ReadFile(v.getContext(),ruta);
+                        //chiti ACA COLOCA EL CODIGO QUE ACTUALIZA EN MYSQL
+                        archivos.eliminarArchivo(ruta);
+                        numero++;
+                        Toast.makeText(getApplicationContext(), "Sincronizando "+numero+" de "+archivosS.size(), Toast.LENGTH_LONG).show();
+                        textSincronizacion.setText("Sincronización ("+numero+") pendientes");
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Para sincronizar debe tener conexion a internet.", Toast.LENGTH_LONG).show();
                 }
             }
         });

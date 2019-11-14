@@ -112,7 +112,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/orden"
                 android:layout_width="match_parent"
@@ -158,7 +158,7 @@
 
 
                 <Button
-                    android:id="@+id/Foto"
+                    android:id="@+id/btnGuardar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -432,6 +432,17 @@
                 android:text="Documentacion"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnGuardarArchivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/button_rounded"
+                android:text="Guardar"
+
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
 
         </LinearLayout>
