@@ -23,10 +23,10 @@
             <com.example.logger.customfonts.TextView_break_bold
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:text="Insertar nuevo formulario canino"
                 android:textColor="@color/colorAccent"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -40,13 +40,17 @@
                     android:id="@+id/caninos_email"
                     android:editable="false"/>
 
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nombre del supervisor:"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Nombre del supervisor"
-                >
                 <Spinner
                     android:id="@+id/spSupervisor"
                     android:layout_width="wrap_content"
@@ -56,7 +60,7 @@
                     android:entries="@array/Supervisor" />
 
 
-            </com.google.android.material.textfield.TextInputLayout>
+
             <EditText
                 android:id="@+id/etDescription"
                 android:layout_width="wrap_content"
@@ -114,8 +118,6 @@
                 android:hint="Seleccione la sede:"
                 />
 
-
-
             <Spinner
                 android:id="@+id/spSede"
                 android:layout_width="match_parent"
@@ -123,9 +125,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:entries="@array/Sede" />
-
-
-
 
             <EditText
                 android:id="@+id/etDescription4"
@@ -139,8 +138,6 @@
                 android:focusable="false"
                 android:hint="Seleccione el orden:"
                 />
-
-
 
             <Spinner
                 android:id="@+id/spOrden"
@@ -179,6 +176,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:text="PRESENTACION PERSONAL"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp" />
@@ -221,7 +219,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Dotacion"
+                android:text="DOTACION"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp" />
 
@@ -294,31 +292,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Documentacion"
+                android:text="DOCUMENTACION"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp" />
 
-            <RadioGroup
+            <TextView
+                android:id="@+id/txtCedula"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/cedula"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Porta la cedula de ciudadania?" />
+                android:layout_weight="1"
+                android:text="Porta la cedula de ciudadania?"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
+        <Spinner
+            android:id="@+id/spCedula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:entries="@array/SiNo" />
+
+
 
                 <EditText
-                    android:id="@+id/comentariocedula"
-
+                    android:id="@+id/comentariCcedula"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -327,854 +325,169 @@
                     android:hint="opcional"
                     android:inputType="textMultiLine"
                     android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
+            <TextView
+                android:id="@+id/txtCarnet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ARL"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Tiene y porta carnet de ARL?" />
+                android:layout_weight="1"
+                android:text="Porta el carnet de la empresa?"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner17"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-            </RadioGroup>
-            <RadioGroup
+            <Spinner
+                android:id="@+id/spCarnet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/manejador"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="El manejador canino fue presentado al funcionario del colegio?" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:entries="@array/SiNo" />
 
-                <Spinner
-                    android:id="@+id/spinner18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
 
-                <EditText
-                    android:id="@+id/comentarioManejador"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
 
-            </RadioGroup>
-            <RadioGroup
+            <EditText
+                android:id="@+id/comentariocarnet"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="left"
+                android:hint="opcional"
+                android:inputType="textMultiLine"
+                android:maxLines="4" />
+
+            <TextView
+                android:id="@+id/txtARL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/folio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Tiene folio de vida al dia?" />
+                android:layout_weight="1"
+                android:text="Porta el carnet de la ARL?"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner19"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
+            <Spinner
+                android:id="@+id/sparl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:entries="@array/SiNo" />
 
-                <EditText
-                    android:id="@+id/comentarioFolio"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
+
+
+            <EditText
+                android:id="@+id/comentarioARL"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="left"
+                android:hint="opcional"
+                android:inputType="textMultiLine"
+                android:maxLines="4" />
+            <TextView
+                android:id="@+id/txtFolio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/vacunas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Tiene el carnet de vacunas al dia?" />
+                android:layout_weight="1"
+                android:text="Tiene folio de vida al dia?"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner20"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioVacunas"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
+            <Spinner
+                android:id="@+id/spFolio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/policia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="El ejemplar tiene el certificado de policia?" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:entries="@array/SiNo" />
 
-                <Spinner
-                    android:id="@+id/spinner21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioPolicia"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
+            <EditText
+                android:id="@+id/comentarioFolio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="left"
+                android:hint="opcional"
+                android:inputType="textMultiLine"
+                android:maxLines="4" />
+            <TextView
+                android:id="@+id/txtVacunas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Poliza"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="El ejemplar tiene poliza civil extracontractual?" />
+                android:layout_weight="1"
+                android:text="Tiene el carnet de vacunas al dia?"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/spinner22"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioPoliza"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
+            <Spinner
+                android:id="@+id/spVacunas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Carnet"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Porta carnet de la empresa?" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:entries="@array/SiNo" />
 
-                <Spinner
-                    android:id="@+id/spinner16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
 
-                <EditText
-                    android:id="@+id/comentarioCarnet"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
 
-            <com.example.logger.customfonts.TextView_break_bold
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/comentarioVacuna"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="ELEMENTOS LOGISTICOS"
-                android:textColor="@color/colorAccent"
-                android:textSize="20sp" />
-            <RadioGroup
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="left"
+                android:hint="opcional"
+                android:inputType="textMultiLine"
+                android:maxLines="4" />
+            <TextView
+                android:id="@+id/txtPolicia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/pozuelos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Los pozuelos estan listos?" />
-                <Spinner
-                    android:id="@+id/spinner24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
+                android:layout_weight="1"
+                android:text="El ejemplar tiene el certificado de policia?"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/comentarioPozuelos"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-
-            <RadioGroup
+            <Spinner
+                android:id="@+id/spPolicia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/alimentacion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Cuenta con alimentacion para el canino?" />
-                <Spinner
-                    android:id="@+id/spinner25"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:entries="@array/SiNo" />
 
-                <EditText
-                    android:id="@+id/comentarioAlimentacion"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
+
+
+            <EditText
+                android:id="@+id/comentarioPolice"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="left"
+                android:hint="opcional"
+                android:inputType="textMultiLine"
+                android:maxLines="4" />
+            <TextView
+                android:id="@+id/txtPoliza"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/minuta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Tiene minuta del puesto en orden?" />
-                <Spinner
-                    android:id="@+id/spinner26"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
+                android:layout_weight="1"
+                android:text="Tiene poliza civil?"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/comentarioMinuta"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
+            <Spinner
+                android:id="@+id/spPoliza"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Aseo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Cuenta con elementos de aseo?" />
-                <Spinner
-                    android:id="@+id/spinner27"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioAseo"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Casa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Existe casa para el descanso del can?" />
-                <Spinner
-                    android:id="@+id/spinner23"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioCasa"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:entries="@array/SiNo" />
 
 
-            <com.example.logger.customfonts.TextView_break_bold
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="PROCEDIMIENTOS DE SEGURIDAD"
-                android:textColor="@color/colorAccent"
-                android:textSize="20sp" />
 
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Vehiculo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="El vehiculo utilizado para el transporte es el adecuado?" />
-                <Spinner
-                    android:id="@+id/spinner28"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioVehiculo"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/protocolo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Existe protocolo de servicio canino?" />
-                <Spinner
-                    android:id="@+id/spinner29"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioProtocolo"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/consignas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Estan documentadas las consignas generales?" />
-                <Spinner
-                    android:id="@+id/spinner31"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioConsignas"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/particulares"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Estan documentadas las consginas particulares?" />
-                <Spinner
-                    android:id="@+id/spinner32"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioParticulares"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Riesgos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Conoce los riesgos del puesto?" />
-                <Spinner
-                    android:id="@+id/spinner33"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioRiesgos"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Emergencia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Conoce el plan de emergencia y evacuacion?" />
-                <Spinner
-                    android:id="@+id/spinner34"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioEmergencia"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Instalaciones"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Conoce las instalaciones del colegio?" />
-                <Spinner
-                    android:id="@+id/spinner35"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioInstalaciones"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/FichaTecnica"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Existe ficha tecnica de los quimicos desinfectantes para el aseo?" />
-                <Spinner
-                    android:id="@+id/spinner36"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioFichaTecnica"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="right"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/jabones"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Existe ficha tecnica de jabones y champus utilizados?" />
-                <Spinner
-                    android:id="@+id/spinner37"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioJabones"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Residuos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Existe ficha tecnica para los residuos organicos del can?" />
-                <Spinner
-                    android:id="@+id/spinner38"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioResiduos"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-
-            <com.example.logger.customfonts.TextView_break_bold
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="CAPACITACION Y ENTRENAMIENTO"
-                android:textColor="@color/colorAccent"
-                android:textSize="20sp" />
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/SPA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Aplica los conocimientos de deteccion de SPA?" />
-                <Spinner
-                    android:id="@+id/spinner39"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioSPA"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Aprendizaje"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="El canino mantiene su nivel de aprendizaje?" />
-                <Spinner
-                    android:id="@+id/spinner40"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioAprendizaje"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/capacitacion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Ha recibido capacitacion en el tema?" />
-                <Spinner
-                    android:id="@+id/spinner41"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioCapacitacion"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Infancia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Ha recibido capacitacion sobre infancia y adolescencia?" />
-                <Spinner
-                    android:id="@+id/spinner42"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioInfancia"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-
-            <com.example.logger.customfonts.TextView_break_bold
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="HORARIOS DE SERVICIO Y REVISTAS DE SUPERVISION AL PUESTO"
-                android:textColor="@color/colorAccent"
-                android:textSize="20sp" />
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Revistas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Se cumple con las revistas diarias?" />
-                <Spinner
-                    android:id="@+id/spinner43"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioRevistas"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Horario"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="El manejador cumple con el horario?" />
-                <Spinner
-                    android:id="@+id/spinner44"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioHorario"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Puesto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="El manejador se encuentraba en su puesto de trabajo?" />
-                <Spinner
-                    android:id="@+id/spinner45"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_weight="4" />
-
-                <EditText
-                    android:id="@+id/comentarioPuesto"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="left"
-                    android:hint="opcional"
-                    android:inputType="textMultiLine"
-                    android:maxLines="4" />
-            </RadioGroup>
 
             <Button
                 android:id="@+id/AgregarFormulario"
@@ -1184,7 +497,6 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_rounded"
                 android:text="Agregar"
-
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
