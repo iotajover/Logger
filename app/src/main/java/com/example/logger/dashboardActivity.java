@@ -14,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.logger.customfonts.manejoArchivos;
+
 public class dashboardActivity extends AppCompatActivity {
     private TextView username;
     private TextView name;
@@ -21,6 +23,7 @@ public class dashboardActivity extends AppCompatActivity {
 
     Button botonFormulario;
     Button buttonLogout;
+    Button buttonSincronizacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class dashboardActivity extends AppCompatActivity {
         name = (TextView)findViewById(R.id.dashboard_name);
         email = (TextView)findViewById(R.id.dashboard_email);
         botonFormulario = (Button)findViewById(R.id.buttonFormulario);
+        buttonSincronizacion = (Button)findViewById(R.id.botonSincronizacion);
         buttonLogout = (Button)findViewById(R.id.buttonLogout);
 
         try {
@@ -68,7 +72,18 @@ public class dashboardActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        buttonSincronizacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                manejoArchivos archivos = new manejoArchivos();
+                archivos.saveToFile("Hola");
+                archivos.ReadFile(v.getContext());
+            }
+        });
     }
+
+
 
     private void clearPreferences() {
         SharedPreferences sharedPreferences = getSharedPreferences("session_preferences", Context.MODE_PRIVATE);
