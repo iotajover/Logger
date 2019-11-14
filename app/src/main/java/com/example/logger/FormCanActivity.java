@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.logger.customfonts.manejoArchivos;
 import com.google.android.material.textfield.TextInputEditText;
@@ -61,14 +62,14 @@ public class FormCanActivity extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cargarFormulario();
+                cargarFormulario(view);
             }
         });
     }
 
 
 
-    public void cargarFormulario(){
+    public void cargarFormulario(View v){
         formulario formulario = new formulario();
         TextInputEditText emial = (TextInputEditText)findViewById(R.id.caninos_email);
         formulario.setCorreo(email.getText().toString());
@@ -87,8 +88,15 @@ public class FormCanActivity extends AppCompatActivity {
 
         TextInputEditText grupo = (TextInputEditText)findViewById(R.id.grupo);
         formulario.setGrupo(grupo.getText().toString());
-
         manejoArchivos manejoArchivos= new manejoArchivos();
-        manejoArchivos.saveToFile(formulario);
+        if(manejoArchivos.saveToFile(formulario)){
+            Toast.makeText(getApplicationContext(), "Formulario guardado con exito.", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent (v.getContext(),dashboardActivity.class);
+            startActivity(intent);
+        }else{
+            Toast.makeText(getApplicationContext(), "NO fue posible guardar el formulario.", Toast.LENGTH_LONG).show();
+        }
+
+
     }
 }
