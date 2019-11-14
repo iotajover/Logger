@@ -22,6 +22,7 @@ public class dashboardActivity extends AppCompatActivity {
     private TextView username;
     private TextView name;
     private TextView email;
+    private TextView textSincronizacion;
 
     Button botonFormulario;
     Button buttonLogout;
@@ -42,6 +43,10 @@ public class dashboardActivity extends AppCompatActivity {
         botonFormulario = (Button)findViewById(R.id.buttonFormulario);
         buttonSincronizacion = (Button)findViewById(R.id.botonSincronizacion);
         buttonLogout = (Button)findViewById(R.id.buttonLogout);
+        textSincronizacion=(TextView)findViewById(R.id.textSincronizacion);
+        manejoArchivos archivos = new manejoArchivos();
+        List<String >archivosS = archivos.leerRutasArchivos();
+        textSincronizacion.setText("Sincronización ("+archivosS.size()+") pendientes");
 
         try {
             Intent intent = getIntent();
@@ -79,12 +84,16 @@ public class dashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 manejoArchivos archivos = new manejoArchivos();
-                archivos.saveToFile("Hola");
                 List<String >archivosS = archivos.leerRutasArchivos();
+                int numero = 1;
                 for(String ruta:archivosS){
-                    archivos.eliminarArchivo(ruta);
+                formulario obj =archivos.ReadFile(v.getContext(),ruta);
+                //chiti ACA COLOCA EL CODIGO QUE ACTUALIZA EN MYSQL
+                archivos.eliminarArchivo(ruta);
+                numero++;
+                Toast.makeText(getApplicationContext(), "Sincronizando "+numero+" de "+archivosS.size(), Toast.LENGTH_LONG).show();
+                textSincronizacion.setText("Sincronización ("+numero+") pendientes");
                 }
-                //archivos.ReadFile(v.getContext());
             }
         });
     }

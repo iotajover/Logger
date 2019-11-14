@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.logger.formulario;
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,17 +27,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import javax.microedition.khronos.opengles.GL10;
+
 public class manejoArchivos extends AppCompatActivity {
 
     final static String fileName = "data.txt";
     final static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/instinctcoder/readwrite/" ;
     final static String TAG = FileBackupHelper.class.getName();
 
-    public static String ReadFile( Context context){
+    public static formulario ReadFile( Context context, String ruta){
         String line = null;
-
+        formulario formulario = null;
         try {
-            FileInputStream fileInputStream = new FileInputStream (new File(path + fileName));
+            FileInputStream fileInputStream = new FileInputStream (new File(path + ruta));
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             StringBuilder stringBuilder = new StringBuilder();
@@ -45,8 +50,10 @@ public class manejoArchivos extends AppCompatActivity {
             }
             fileInputStream.close();
             line = stringBuilder.toString();
-
             bufferedReader.close();
+            formulario = new formulario();
+            Gson gson = new Gson();
+            formulario= gson.fromJson(line, formulario.class);
         }
         catch(FileNotFoundException ex) {
             System.out.println(TAG+ ex.getMessage());
@@ -54,12 +61,13 @@ public class manejoArchivos extends AppCompatActivity {
         catch(IOException ex) {
             System.out.println(TAG+ ex.getMessage());
         }
-        return line;
+        return formulario;
     }
 
-    public static boolean saveToFile( String data){
+    public static boolean saveToFile( formulario formulario){
         try {
-            Gson
+            Gson gson = new Gson();
+            String data = gson.toJson(formulario);
             new File(path  ).mkdir();
             File file = new File(path+ System.currentTimeMillis()+".txt");
             if (!file.getParentFile().exists()) {
@@ -104,6 +112,13 @@ public class manejoArchivos extends AppCompatActivity {
         }catch(Exception ex){
             return false;
         }
+    }
+
+    public formulario jsonToFormulario(String json){
+        formulario formulario = new formulario();
+        Gson gson = new Gson();
+        formulario= gson.fromJson(json, formulario.class);
+        return  formulario;
     }
 
 }

@@ -199,15 +199,17 @@
                                     android:src="@drawable/sincronizacion"
                                     android:layout_centerInParent="true"
                                     android:id="@+id/dashboard_img3"/>
+
                                 <TextView
+                                    android:id="@+id/textSincronizacion"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sincronización\nFormularios"
-                                    android:textSize="16sp"
                                     android:layout_below="@+id/dashboard_img3"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
-                                    android:layout_marginBottom="10dp"/>
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Sincronización\nFormularios"
+                                    android:textSize="16sp" />
 
                                 <Button
                                     android:id="@+id/botonSincronizacion"
